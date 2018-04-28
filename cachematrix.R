@@ -1,8 +1,7 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
-## Write a short comment describing this function
-
+## This function creates a matrix that can be chached and laoded from chache memory without recomputing it
 makeCacheMatrix <- function(x = matrix()) {
         inverse <- NULL
         set <- function(y) { ##SET THE MATRIX Y TO X
@@ -18,8 +17,7 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
-
+## This function load the matrix if it is already in cache or recompute it
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
         inv <- x$getInverse()
@@ -29,6 +27,6 @@ cacheSolve <- function(x, ...) {
         }
         data <- x$get()
         inv <- solve(data)
-        x$setmean(inv)
+        x$setInverse(inv)
         inv
 }
